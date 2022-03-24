@@ -8,3 +8,11 @@
  *  5. Add error/loading states and cover edge use cases
  *
  */
+
+
+ const API_ENDPOINT = "/api/location/search/?query=(query) /api/location/search/?lattlong=(latt),(long)"
+
+
+$.getJSOM(API_ENDPOINT, {
+    
+})data, success(data, status, xhr))
