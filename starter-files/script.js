@@ -10,8 +10,8 @@
  */
 
 
- const API_ENDPOINT = "/api/location/search/?query= + "
-
+ //const API_ENDPOINT = "/api/location/search/?query= + "
+let API_ENDPOINT = 'https://www.metaweather.com/api/location';
 
 $(document).ready(function () {
     $('.searchBox__button').click(function (e) {
