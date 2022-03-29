@@ -9,7 +9,7 @@
  *
  */
 
-
+const searchButton = document.querySelector('searchBox__button');
  //const API_ENDPOINT = "/api/location/search/?query= + "
 let API_ENDPOINT = 'https://www.metaweather.com/api/location';
 
@@ -29,4 +29,8 @@ $.getJSON(API_ENDPOINT, {
 
 }).done(function (data, status, xhr) {
     
+})
+
+searchButton.addEventListener('click', function () {
+    console.log("search button was clicked")
 })
