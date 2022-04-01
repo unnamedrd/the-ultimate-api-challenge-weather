@@ -11,11 +11,25 @@
 const API_ENDPOINT = 'https://www.metaweather.com/api/location';
 const searchAPI_ENDPOINT = "${API_ENDPOINT}/search"
 
-class requestController{
-     
- }
+class requestController {
+    //method
+    addCorsHeader() {
+        $.ajaxPrefilter(options => {
+            if (options.crossDomain && $.support.cors) {
+                options.url = 'https://the-ultimate-api-challenge.herokuapp.com/' + options.url;
+            }
+        });
+    }
+    getLocation() {
+        this.addCorsHeader();
+        $.getJSON(searchAPI_ENDPOINT, { query: 'Seattle' }).done(data => console.log(data));
+    }
+}
+ 
+const request = new requestController();
+    request.getLocation()
 
-const searchButton = document.querySelector('searchBox__button');
+/*const searchButton = document.querySelector('searchBox__button');
  //const API_ENDPOINT = "/api/location/search/?query= + "
 
 
@@ -39,4 +53,4 @@ $.getJSON(API_ENDPOINT, {
 
 searchButton.addEventListener('click', function () {
     console.log("search button was clicked")
-})
+})*/
