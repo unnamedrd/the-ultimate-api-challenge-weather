@@ -8,10 +8,16 @@
  *  5. Add error/loading states and cover edge use cases
  *  the API works in two steps first get the location WOEID, then the API uses the WOEID to match and fetch the weather data by looking up the WOEID 
  */
+const API_ENDPOINT = 'https://www.metaweather.com/api/location';
+const searchAPI_ENDPOINT = "${API_ENDPOINT}/search"
+
+class requestController{
+     
+ }
 
 const searchButton = document.querySelector('searchBox__button');
  //const API_ENDPOINT = "/api/location/search/?query= + "
-let API_ENDPOINT = 'https://www.metaweather.com/api/location';
+
 
 $(document).ready(function () {
     $('.searchBox__button').click(function (e) {
