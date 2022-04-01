@@ -6,7 +6,7 @@
  *  3. Prepare data for the UI in advance and try to use unified structure before outputting to the template
  *  4. Divide classes per function to have a more clean code approach and separation on concerns
  *  5. Add error/loading states and cover edge use cases
- *
+ *  the API works in two steps first get the location WOEID, then the API uses the WOEID to match and fetch the weather data by looking up the WOEID 
  */
 
 const searchButton = document.querySelector('searchBox__button');
