@@ -11,7 +11,18 @@
 const API_ENDPOINT = 'https://www.metaweather.com/api/location';
 const searchAPI_ENDPOINT = "${API_ENDPOINT}/search"
 
-class requestController {
+
+$.ajax({
+    type: 'GET',
+    dataType: 'jsonp',
+    url: 'https://www.metaweather.com/api/location',
+    headers: {
+        'Authorization'
+    }
+});
+
+
+/*class requestController {
     //method
     addCorsHeader() {
         $.ajaxPrefilter(options => {
