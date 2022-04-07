@@ -52,23 +52,6 @@ alert("Error: " + status + " " + error + " " + xhr.status + " " + xhr.statusText
     }
 }
  
-const request = new requestController();
-    request.getLocation()
-
-/*const searchButton = document.querySelector('searchBox__button');
- //const API_ENDPOINT = "/api/location/search/?query= + "
-
-
-$(document).ready(function () {
-    $('.searchBox__button').click(function (e) {
-        $.getJSON(API_ENDPOINT, function () {
-            $().html(`<p>location_type</p>`);
-            $().html(`<p>weather_state_name</p>`);
-            $().html(`<p>(min|max|the)_temp</p>`);
-            
-        })
-    })
-})
 
 
 $.getJSON(API_ENDPOINT, {
