@@ -8,58 +8,15 @@
  *  5. Add error/loading states and cover edge use cases
  *  the API works in two steps first get the location WOEID, then the API uses the WOEID to match and fetch the weather data by looking up the WOEID 
  */
-const API_ENDPOINT = 'https://www.metaweather.com/api/location';
+const API_ENDPOINT = 'https://www.metaweather.com//api/location/search/?query=(rome)';
 const searchAPI_ENDPOINT = "${API_ENDPOINT}/search"
 
 
-$.ajax({
-    type: 'GET',
-    dataType: 'jsonp',
-    url: 'https://www.metaweather.com/api/location',
-    headers: {
-        'Authorization'
-    }
-});
-
-$("#submitButton").click(function (e) {
-$.ajax({
-type: "POST",
-url: "http://api.openweathermap.org/data/2.5/group?id=2643741,2644688,2633352,2654675,2988507,2990969,2911298,2925535,2950159,3120501,3128760,5128581,4140963,4930956,5106834,5391959,5368361,5809844,4099974,4440906&appid=de6d52c2ebb7b1398526329875a49c57&units=metric",
-dataType: "json",
-success: function (result, status, xhr) {
-//code
-});
-},
-error: function (xhr, status, error) {
-alert("Error: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
-}
-});
-});
-
-
-/*class requestController {
-    //method
-    addCorsHeader() {
-        $.ajaxPrefilter(options => {
-            if (options.crossDomain && $.support.cors) {
-                options.url = 'https://the-ultimate-api-challenge.herokuapp.com/' + options.url;
-            }
-        });
-    }
-    getLocation() {
-        this.addCorsHeader();
-        $.getJSON(searchAPI_ENDPOINT, { query: 'Seattle' }).done(data => console.log(data));
-    }
-}
- 
-
-
-$.getJSON(API_ENDPOINT, {
-
-}).done(function (data, status, xhr) {
-    
-})
-
-searchButton.addEventListener('click', function () {
-    console.log("search button was clicked")
-})*/
+fetch(API_ENDPOINT, {mode:'no-cors'})
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+    })
+    .catch(err => {
+        console.log(`error ${err}`)
+    })
