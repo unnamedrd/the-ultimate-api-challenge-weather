@@ -8,15 +8,20 @@
  *  5. Add error/loading states and cover edge use cases
  *  the API works in two steps first get the location WOEID, then the API uses the WOEID to match and fetch the weather data by looking up the WOEID 
  */
-const API_ENDPOINT = 'https://www.metaweather.com//api/location/search/?query=(rome)';
+const API_ENDPOINT = 'https://www.metaweather.com//api/location/search/?query=rome';
 const searchAPI_ENDPOINT = "${API_ENDPOINT}/search"
+const searchBtn = document.querySelector(".searchBox__button");
 
 
-fetch(API_ENDPOINT, {mode:'no-cors'})
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-    })
-    .catch(err => {
-        console.log(`error ${err}`)
-    })
+searchBtn.addEventListener('click', runAPI)
+
+function runAPI() {
+    fetch(API_ENDPOINT, { mode: 'no-cors' })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(err => {
+            //console.log(`error ${err}`)
+        });
+}
